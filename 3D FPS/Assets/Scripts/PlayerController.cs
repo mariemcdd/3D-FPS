@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour
                 {
                     firePoint.LookAt(hit.point);
                 }
-                else
-                {
-                    firePoint.LookAt(theCamera.position + (theCamera.forward * 30f));
-                }
-
-                Instantiate(bullet, transform.position, transform.rotation);
             }
+            else
+            {
+                firePoint.LookAt(theCamera.position + (theCamera.forward * 30f));
+            }
+
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
     }
 }
